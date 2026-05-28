@@ -1,139 +1,280 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="el">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>IBG CAPITAL A.E.</title>
-<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet" type="text/css">
-<style type="text/css">
+<style>
+:root {
+	--ink: #172033;
+	--muted: #5c687a;
+	--paper: #ffffff;
+	--line: #d8e0ea;
+	--accent: #1f6bb5;
+	--accent-dark: #174f87;
+	--page: #eef3f8;
+}
+
+* {
+	box-sizing: border-box;
+}
+
 body {
-	background-image: url(images/backcon.jpg);
-	background-repeat: repeat;
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 50px;
+	margin: 0;
+	min-height: 100vh;
+	color: var(--ink);
+	background: var(--page) url("images/backcon.jpg") repeat;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
 }
 
-.title {
-	font-size:40px;
-	text-align:center;
-	font-family: 'Roboto Slab', serif;
-	font-weight:bold;
-	margin-top:30px;
-	color:#fff;
+.page {
+	width: min(1080px, calc(100% - 32px));
+	margin: 0 auto;
+	padding: 40px 0 56px;
 }
 
-.subtitle {
-	font-size:26px;
-	text-align:center;
-	font-family: 'Roboto Slab', serif;
-	font-weight:bold;
-	color:#fff;
+.masthead {
+	background: #ffffff;
+	border-top: 5px solid var(--accent);
+	border-radius: 8px;
+	box-shadow: 0 20px 45px rgba(23, 32, 51, 0.14);
+	padding: 36px;
 }
 
-.info {
-	font-size:16px;
-	text-align:center;
-	font-family: Arial, serif;
-	font-weight:normal;
-	margin-top:30px;
-	color:#fff;
+.kicker {
+	margin: 0 0 8px;
+	color: var(--accent-dark);
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
 }
 
-.isologismos {
-	font-size:14px;
-	text-align:center;
-	font-family: Arial, serif;
-	font-weight:normal;
-	margin-top:30px;
-	line-height:20px;
+h1 {
+	margin: 0;
+	font-size: 36px;
+	line-height: 1.1;
 }
 
-.line {
-	width:650px;
-	margin-left:auto;
-	margin-right:auto;
-	border-bottom:thin;
-	border-bottom-style:solid;
-	border-bottom-color:#86b4e7;
-	margin-top:30px;
-	margin-bottom:30px;
+.details {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 12px 24px;
+	margin-top: 24px;
+	padding-top: 22px;
+	border-top: 1px solid var(--line);
+	color: var(--muted);
 }
 
-.link {
-	font-size:14px;
-	text-align:center;
-	font-family: 'Roboto Slab', serif;
-	font-weight:normal;
+.details p {
+	margin: 0;
 }
 
-a {
-	color:#86b4e7;
-	font-style:normal;
-	text-decoration:none;
+.content {
+	display: grid;
+	gap: 24px;
+	margin-top: 24px;
 }
-.small-title {
-    text-align:center;
-	font-family: 'Roboto Slab', serif;
-	font-size:20px;
-	margin-top:30px;
-	margin-bottom:10px;
-	color:#fff;
+
+.section {
+	background: var(--paper);
+	border: 1px solid var(--line);
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 10px 24px rgba(23, 32, 51, 0.08);
+}
+
+.section h2 {
+	margin: 0;
+	padding: 18px 22px;
+	background: #f8fafc;
+	border-bottom: 1px solid var(--line);
+	font-size: 18px;
+}
+
+.documents {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.document {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	min-height: 86px;
+	padding: 18px 22px;
+	color: var(--ink);
+	text-decoration: none;
+	border-bottom: 1px solid var(--line);
+	transition: background-color 160ms ease, color 160ms ease;
+}
+
+.document:nth-child(odd) {
+	border-right: 1px solid var(--line);
+}
+
+.document:nth-last-child(-n+2) {
+	border-bottom: 0;
+}
+
+.document:hover,
+.document:focus {
+	background: #eef6ff;
+	color: var(--accent-dark);
+	outline: none;
+}
+
+.document img {
+	width: 32px;
+	height: 34px;
+	flex: 0 0 auto;
+}
+
+.document strong {
+	display: block;
+	color: var(--ink);
+	font-size: 15px;
+}
+
+.document span {
+	display: block;
+	margin-top: 2px;
+	color: var(--muted);
+	font-size: 14px;
+}
+
+.document:only-child {
+	grid-column: 1 / -1;
+}
+
+.footer {
+	margin-top: 24px;
+	color: #ffffff;
+	font-size: 13px;
+	text-align: center;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
+}
+
+@media (max-width: 760px) {
+	.page {
+		width: min(100% - 20px, 1080px);
+		padding: 20px 0 32px;
+	}
+
+	.masthead {
+		padding: 24px;
+	}
+
+	h1 {
+		font-size: 30px;
+	}
+
+	.details,
+	.documents {
+		grid-template-columns: 1fr;
+	}
+
+	.document,
+	.document:nth-child(odd) {
+		border-right: 0;
+	}
+
+	.document:nth-last-child(2) {
+		border-bottom: 1px solid var(--line);
+	}
 }
 </style>
 </head>
-
 <body>
-<div class="title">IBG CAPITAL A.E.</div>
-<div class="line"></div>
-<div class="info">ΑΦΜ: 999983020, Δ.Ο.Υ.: ΦΑΕ ΑΘΗΝΩΝ, Γ.Ε.Μ.Η.: 004267201000, ΑΡΜΑΕ: 48793/01ΑΤ/Β/01/228/02,<br/>
- ΔΙΕΥΘΥΝΣΗ: Λ. ΚΗΦΙΣΙΑΣ 10 - ΜΑΡΟΥΣΙ, ΤΗΛΕΦΩΝΟ: 2108171953</div>
+<main class="page">
+	<header class="masthead">
+		<p class="kicker">Εταιρικές ανακοινώσεις</p>
+		<h1>IBG CAPITAL A.E.</h1>
+		<div class="details">
+			<p>ΑΦΜ: 999983020</p>
+			<p>Δ.Ο.Υ.: ΦΑΕ ΑΘΗΝΩΝ</p>
+			<p>Γ.Ε.Μ.Η.: 004267201000</p>
+			<p>ΑΡΜΑΕ: 48793/01ΑΤ/Β/01/228/02</p>
+			<p>Λ. ΚΗΦΙΣΙΑΣ 10 - ΜΑΡΟΥΣΙ</p>
+			<p>ΤΗΛΕΦΩΝΟ: 2108171953</p>
+		</div>
+	</header>
 
-<div class="small-title">ΙΣΟΛΟΓΙΣΜΟΙ:</div>
+	<div class="content">
+		<section class="section">
+			<h2>Ισολογισμοί</h2>
+			<div class="documents">
+				<a class="document" href="images/isologismos-2018.pdf" target="_blank" rel="noopener">
+					<img src="images/Adobe_PDF_Icon.svg.png" alt="">
+					<span><strong>Ισολογισμός 2018</strong><span>Προβολή PDF</span></span>
+				</a>
+				<a class="document" href="images/isologismos-2017.pdf" target="_blank" rel="noopener">
+					<img src="images/Adobe_PDF_Icon.svg.png" alt="">
+					<span><strong>Ισολογισμός 2017</strong><span>Προβολή PDF</span></span>
+				</a>
+				<a class="document" href="images/isologismos-2016.pdf" target="_blank" rel="noopener">
+					<img src="images/Adobe_PDF_Icon.svg.png" alt="">
+					<span><strong>Ισολογισμός 2016</strong><span>Προβολή PDF</span></span>
+				</a>
+				<a class="document" href="images/isologismos-2015.pdf" target="_blank" rel="noopener">
+					<img src="images/Adobe_PDF_Icon.svg.png" alt="">
+					<span><strong>Ισολογισμός 2015</strong><span>Προβολή PDF</span></span>
+				</a>
+				<a class="document" href="images/isologismos-2014.pdf" target="_blank" rel="noopener">
+					<img src="images/Adobe_PDF_Icon.svg.png" alt="">
+					<span><strong>Ισολογισμός 2014</strong><span>Προβολή PDF</span></span>
+				</a>
+				<a class="document" href="images/isologismos-2013.pdf" target="_blank" rel="noopener">
+					<img src="images/Adobe_PDF_Icon.svg.png" alt="">
+					<span><strong>Ισολογισμός 2013</strong><span>Προβολή PDF</span></span>
+				</a>
+			</div>
+		</section>
 
-<div class="isologismos"><a href="images/isologismos-2018.pdf" target="_blank"><img src="images/Adobe_PDF_Icon.svg.png" width="32" height="34" border="0"/><br/>
-ΠΡΟΒΟΛΗ ΙΣΟΛΟΓΙΣΜΟΥ 2018 »</a></div>
+		<section class="section">
+			<h2>Οικονομικές Καταστάσεις</h2>
+			<div class="documents">
+				<a class="document" href="images/oikonomikes-2018.pdf" target="_blank" rel="noopener">
+					<img src="images/Adobe_PDF_Icon.svg.png" alt="">
+					<span><strong>Χρήση 2018</strong><span>Ετήσιες οικονομικές καταστάσεις</span></span>
+				</a>
+				<a class="document" href="images/oikonomikes-2017.pdf" target="_blank" rel="noopener">
+					<img src="images/Adobe_PDF_Icon.svg.png" alt="">
+					<span><strong>Χρήση 2017</strong><span>Ετήσιες οικονομικές καταστάσεις</span></span>
+				</a>
+				<a class="document" href="images/oikonomikes-2016.pdf" target="_blank" rel="noopener">
+					<img src="images/Adobe_PDF_Icon.svg.png" alt="">
+					<span><strong>Χρήση 2016</strong><span>Ετήσιες οικονομικές καταστάσεις</span></span>
+				</a>
+				<a class="document" href="images/oikonomikes-2015.pdf" target="_blank" rel="noopener">
+					<img src="images/Adobe_PDF_Icon.svg.png" alt="">
+					<span><strong>Χρήση 2015</strong><span>Ετήσιες οικονομικές καταστάσεις</span></span>
+				</a>
+				<a class="document" href="images/oikonomikes-2014.pdf" target="_blank" rel="noopener">
+					<img src="images/Adobe_PDF_Icon.svg.png" alt="">
+					<span><strong>Χρήση 2014</strong><span>Ετήσιες οικονομικές καταστάσεις</span></span>
+				</a>
+				<a class="document" href="images/oikonomikes-2013.pdf" target="_blank" rel="noopener">
+					<img src="images/Adobe_PDF_Icon.svg.png" alt="">
+					<span><strong>Χρήση 2013</strong><span>Ετήσιες οικονομικές καταστάσεις</span></span>
+				</a>
+			</div>
+		</section>
 
-<div class="isologismos"><a href="images/isologismos-2017.pdf" target="_blank"><img src="images/Adobe_PDF_Icon.svg.png" width="32" height="34" border="0"/><br/>
-ΠΡΟΒΟΛΗ ΙΣΟΛΟΓΙΣΜΟΥ 2017 »</a></div>
+		<section class="section">
+			<h2>Προσκλήσεις</h2>
+			<div class="documents">
+				<a class="document" href="images/prosklisi-2017.pdf" target="_blank" rel="noopener">
+					<img src="images/Adobe_PDF_Icon.svg.png" alt="">
+					<span><strong>Τακτική Γενική Συνέλευση 2017</strong><span>Πρόσκληση μετόχων</span></span>
+				</a>
+			</div>
+		</section>
+	</div>
 
-<div class="isologismos"><a href="images/isologismos-2016.pdf" target="_blank"><img src="images/Adobe_PDF_Icon.svg.png" width="32" height="34" border="0"/><br/>
-ΠΡΟΒΟΛΗ ΙΣΟΛΟΓΙΣΜΟΥ 2016 »</a></div>
-
-<div class="isologismos"><a href="images/isologismos-2015.pdf" target="_blank"><img src="images/Adobe_PDF_Icon.svg.png" width="32" height="34" border="0"/><br/>
-ΠΡΟΒΟΛΗ ΙΣΟΛΟΓΙΣΜΟΥ 2015 »</a></div>
-
-<div class="isologismos"><a href="images/isologismos-2014.pdf" target="_blank"><img src="images/Adobe_PDF_Icon.svg.png" width="32" height="34" border="0"/><br/>
-ΠΡΟΒΟΛΗ ΙΣΟΛΟΓΙΣΜΟΥ 2014 »</a></div>
-
-<div class="isologismos"><a href="images/isologismos-2013.pdf" target="_blank"><img src="images/Adobe_PDF_Icon.svg.png" width="32" height="34" border="0"/><br/>
-ΠΡΟΒΟΛΗ ΙΣΟΛΟΓΙΣΜΟΥ 2013 »</a></div>
-
-<div class="small-title">ΟΙΚΟΝΟΜΙΚΕΣ ΚΑΤΑΣΤΑΣΕΙΣ:</div>
-
-<div class="isologismos"><a href="images/oikonomikes-2018.pdf" target="_blank"><img src="images/Adobe_PDF_Icon.svg.png" width="32" height="34" border="0"/><br/>
-ΕΤΗΣΙΕΣ ΟΙΚΟΝΟΜΙΚΕΣ ΚΑΤΑΣΤΑΣΕΙΣ ΤΗΣ ΧΡΗΣΗΣ 2018 »</a></div>
-
-<div class="isologismos"><a href="images/oikonomikes-2017.pdf" target="_blank"><img src="images/Adobe_PDF_Icon.svg.png" width="32" height="34" border="0"/><br/>
-ΕΤΗΣΙΕΣ ΟΙΚΟΝΟΜΙΚΕΣ ΚΑΤΑΣΤΑΣΕΙΣ ΤΗΣ ΧΡΗΣΗΣ 2017 »</a></div>
-
-<div class="isologismos"><a href="images/oikonomikes-2016.pdf" target="_blank"><img src="images/Adobe_PDF_Icon.svg.png" width="32" height="34" border="0"/><br/>
-ΕΤΗΣΙΕΣ ΟΙΚΟΝΟΜΙΚΕΣ ΚΑΤΑΣΤΑΣΕΙΣ ΤΗΣ ΧΡΗΣΗΣ 2016 »</a></div>
-
-<div class="isologismos"><a href="images/oikonomikes-2015.pdf" target="_blank"><img src="images/Adobe_PDF_Icon.svg.png" width="32" height="34" border="0"/><br/>
-ΕΤΗΣΙΕΣ ΟΙΚΟΝΟΜΙΚΕΣ ΚΑΤΑΣΤΑΣΕΙΣ ΤΗΣ ΧΡΗΣΗΣ 2015 »</a></div>
-
-<div class="isologismos"><a href="images/oikonomikes-2014.pdf" target="_blank"><img src="images/Adobe_PDF_Icon.svg.png" width="32" height="34" border="0"/><br/>
-ΕΤΗΣΙΕΣ ΟΙΚΟΝΟΜΙΚΕΣ ΚΑΤΑΣΤΑΣΕΙΣ ΤΗΣ ΧΡΗΣΗΣ 2014 »</a></div>
-
-<div class="isologismos"><a href="images/oikonomikes-2013.pdf" target="_blank"><img src="images/Adobe_PDF_Icon.svg.png" width="32" height="34" border="0"/><br/>
-ΕΤΗΣΙΕΣ ΟΙΚΟΝΟΜΙΚΕΣ ΚΑΤΑΣΤΑΣΕΙΣ ΤΗΣ ΧΡΗΣΗΣ 2013 »</a></div>
-
-<div class="small-title">ΠΡΟΣΚΛΗΣΕΙΣ:</div>
-
-<div class="isologismos"><a href="images/prosklisi-2017.pdf" target="_blank"><img src="images/Adobe_PDF_Icon.svg.png" width="32" height="34" border="0"/><br/>
-ΠΡΟΣΚΛΗΣΗ ΤΑΚΤΙΚΗΣ ΓΕΝΙΚΗΣ ΣΥΝΕΛΕΥΣΗΣ ΤΩΝ ΜΕΤΟΧΩΝ 2017 »</a></div>
-
+	<footer class="footer">IBG CAPITAL A.E.</footer>
+</main>
 </body>
 </html>
